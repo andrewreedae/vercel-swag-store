@@ -1,0 +1,24 @@
+.productDetail {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+
+    & .contentWrapper {
+        & .productName {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+}
+
+.addToCartButton {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}

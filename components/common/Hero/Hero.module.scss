@@ -1,0 +1,109 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2rem 1rem 2.5rem;
+  }
+}
+
+.heroImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f0f2f5 0%, #e8eaee 100%);
+  box-shadow: 0 4px 20px rgba(1, 45, 98, 0.08);
+
+  @media (min-width: 900px) {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 52%;
+    aspect-ratio: 4 / 3;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+
+  @media (min-width: 900px) {
+    flex: 1 1 0;
+    gap: 1rem;
+    padding: 0.25rem 0;
+  }
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-color, #031a36);
+}
+
+.heroDescription {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--text-color, #031a36);
+  opacity: 0.88;
+  max-width: 38ch;
+
+  @media (min-width: 900px) {
+    font-size: 1.05rem;
+  }
+}
+
+.heroCta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25rem;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  background: var(--primary-color, #012d62);
+  border: 2px solid var(--primary-color, #012d62);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(1, 45, 98, 0.2);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    background: #023a7a;
+    border-color: #023a7a;
+    box-shadow: 0 4px 12px rgba(1, 45, 98, 0.25);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary-color, #fdbb30);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
