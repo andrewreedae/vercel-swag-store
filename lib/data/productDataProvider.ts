@@ -32,7 +32,7 @@ export const getProductStock = async (slugOrId: string) => {
 }
 
 export const getCategories = async () => {
-    "use cache"
+    "use cache: remote"
     cacheLife('categories');
     const data = await getVercelStoreData<Category[]>("categories");
     return data;
@@ -62,7 +62,7 @@ export const searchProducts = async (
 }
 
 const searchProductsCached = async (query: Record<string, string>) => {
-    "use cache"
+    "use cache: remote"
     cacheLife('search');
     return getVercelStoreDataWithMeta<Product[]>("products", query, "GET");
 }
